@@ -43,3 +43,20 @@ body { margin: 0; font-family: $fontFamilyMain }
 section, div, aside, main, header, footer, nav {
   box-sizing: border-box;
 }
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+  &:visited, &:active, &:hover, &:link{
+
+  }
+
+  &:hover{
+    color: $blue;
+  }
+}

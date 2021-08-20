@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { MainComponent } from './component/main.component';
 import { MainRoutingModule } from './main-routing.module';
 import { ChatModule } from '../chat/chat.module';
+import { UserCardModule } from '../../shared/user-card/user-card.module';
+import { NavigationModule } from '../../shared/navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import { ChatModule } from '../chat/chat.module';
   imports: [
     CommonModule,
     MainRoutingModule,
-    ChatModule
+    ChatModule,
+    UserCardModule,
+    NavigationModule
   ],
   exports: [
     MainComponent

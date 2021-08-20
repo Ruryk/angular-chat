@@ -1,0 +1,57 @@
+@import "src/assets/scss/variables";
+
+.navigation-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 0 0;
+  }
+
+  &-item {
+    .list-item {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+
+
+  &-item:last-child {
+    flex: 1 0 auto;
+    align-items: flex-end;
+  }
+
+  &-item::before {
+    content: '';
+    margin-right: 38px;
+    display: inline-flex;
+    height: 100%;
+    width: 3px;
+    background-color: transparent;
+    border-radius: 3px;
+  }
+
+  &-item.active-link, &-item .list-item:hover {
+    mat-icon, a{
+      color: $blue;
+    }
+  }
+
+  &-item.active-link::before {
+    content: '';
+    background-color: $blue;
+    -moz-box-shadow: 1px 0px 10px rgba(42, 139, 242, 0.45), 0px 0px 10px rgba(42, 139, 242, 0.55), 4px 0px 25px rgba(42, 139, 242, 0.75);
+    -webkit-box-shadow: 1px 0px 10px rgba(42, 139, 242, 0.45), 0px 0px 10px rgba(42, 139, 242, 0.55), 4px 0px 25px rgba(42, 139, 242, 0.75);
+    box-shadow: 1px 0px 10px rgba(42, 139, 242, 0.45), 0px 0px 10px rgba(42, 139, 242, 0.55), 4px 0px 25px rgba(42, 139, 242, 0.75);
+  }
+
+
+  &-item mat-icon {
+    color: $lynch;
+    margin-right: 18px;
+  }
+}

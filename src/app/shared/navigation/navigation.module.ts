@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 import { NavigationComponent } from './component/navigation.component';
 import { NavigationRoutingModule } from './navigation-routing.module';
@@ -10,10 +11,12 @@ import { NavigationRoutingModule } from './navigation-routing.module';
   ],
   imports: [
     CommonModule,
-    NavigationRoutingModule
+    NavigationRoutingModule,
+    MatIconModule
   ],
   exports: [
     NavigationComponent
   ]
 })
-export class NavigationModule { }
+export class NavigationModule {
+}

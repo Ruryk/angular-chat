@@ -17,7 +17,7 @@ export class SvgService {
     'film',
     'grid',
     'img',
-    'message',
+    'chat',
     'more',
     'send',
     'person',
@@ -32,7 +32,6 @@ export class SvgService {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {
-    this.initSvg();
   }
 
   initSvg(): void {
