@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 25px;
 
   &-item {
     display: flex;
@@ -28,4 +29,12 @@
   justify-content: space-between;
   width: 100%;
   max-width: 580px;
+
+  app-input {
+    width: 100%;
+  }
+
+  app-select {
+    max-width: 180px;
+  }
 }

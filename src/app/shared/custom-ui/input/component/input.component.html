@@ -6,10 +6,12 @@
         search: EInputTypes.Search,
         active: focus
       }"
+      (click)="inputElement.focus()"
     >
       <mat-icon svgIcon="search"></mat-icon>
       <div class="input-item">
         <input
+          #inputElement
           (focus)="focus = true"
           (focusout)="focus = false"
           type="text"
