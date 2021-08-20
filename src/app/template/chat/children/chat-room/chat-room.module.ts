@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ChatRoomComponent } from './component/chat-room.component';
 import { ChatRoomRoutingModule } from './chat-room-routing.module';
+import { SharedModule } from '../../../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ChatRoomRoutingModule } from './chat-room-routing.module';
   ],
   imports: [
     CommonModule,
-    ChatRoomRoutingModule
+    ChatRoomRoutingModule,
+    SharedModule
   ],
   exports: [
     ChatRoomComponent

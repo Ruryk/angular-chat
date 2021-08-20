@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MainComponent } from './component/main.component';
 import { MainRoutingModule } from './main-routing.module';
-import { ChatModule } from '../../chat/chat.module';
+import { ChatModule } from '../chat/chat.module';
 
 @NgModule({
   declarations: [
