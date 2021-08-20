@@ -3,7 +3,7 @@
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .chat-list-header {
@@ -21,4 +21,11 @@
       margin-bottom: 15px;
     }
   }
+}
+
+.chat-list-search {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 580px;
 }

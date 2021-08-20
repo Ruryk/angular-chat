@@ -1,0 +1,23 @@
+<ng-container [ngSwitch]="inputParameters.type">
+  <ng-container *ngSwitchCase="EInputTypes.Search">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        search: EInputTypes.Search,
+        active: focus
+      }"
+    >
+      <mat-icon svgIcon="search"></mat-icon>
+      <div class="input-item">
+        <input
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="text"
+          [placeholder]="inputParameters.placeholder"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container></ng-container>
+</ng-container>

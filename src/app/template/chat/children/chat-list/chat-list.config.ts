@@ -5,4 +5,10 @@ export const CChatListConfigList = {
       text: 'Create new Chat',
     },
   },
+  inputs: {
+    search: {
+      type: 'search',
+      placeholder: 'Search',
+    },
+  },
 };

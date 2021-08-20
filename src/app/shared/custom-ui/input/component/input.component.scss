@@ -1,0 +1,36 @@
+@import "src/assets/scss/mixins";
+
+.input-wrapper {
+  width: 100%;
+  max-width: 722px;
+  padding: 23px 41px;
+  background: $white;
+  border: 2px solid transparent;
+  border-radius: 6px 0 0 6px;
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 10px;
+    color: $lynch;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: $dark;
+    font-size: $mediumFz;
+    line-height: $bigLh;
+    caret-color: $blue;
+  }
+
+  input::placeholder {
+    color: $lynch;
+  }
+}
+
+.input-wrapper.active {
+  border: 2px solid $blue;
+}
