@@ -1,0 +1,69 @@
+<ng-container [ngSwitch]="chatCardParameters.type">
+  <ng-container>
+    <div
+      class="chat-card-wrapper user-card-container"
+      [ngClass]="chatCardParameters.type"
+    >
+      <div class="chat-card-header">
+        <div class="header-item">
+          <div class="user-photo card-photo">
+            <img
+              [src]="'/assets/img/' + componentParameters.data.photo + '.png'"
+              alt="user-photo"
+            />
+
+            <div
+              *ngIf="chatCardParameters.data.online"
+              class="user-status"
+            ></div>
+          </div>
+          <div class="user-info">
+            <div class="user-name user-name-text">
+              {{ chatCardParameters.data.firstName }}
+              {{ chatCardParameters.data.lastName }}
+            </div>
+            <div
+              class="user-status"
+              [ngClass]="{
+                'user-action-text-active':
+                  chatCardParameters.type === EChatCardTypes.Active,
+                'user-action-text':
+                  chatCardParameters.type === EChatCardTypes.NoActive
+              }"
+            >
+              {{ chatCardParameters.data.status }}
+            </div>
+          </div>
+        </div>
+        <div class="header-item">
+          <div
+            class="date-message"
+            [ngClass]="{
+              'date-text-active':
+                chatCardParameters.type === EChatCardTypes.Active,
+              'date-text': chatCardParameters.type === EChatCardTypes.NoActive
+            }"
+          >
+            {{ chatCardParameters.data.time | date: "h:mm:ss" }}
+          </div>
+        </div>
+      </div>
+      <div class="chat-card-body">
+        <div
+          class="body-message"
+          [ngClass]="{
+            'message-text-member':
+              chatCardParameters.type === EChatCardTypes.Active,
+            'message-text-user':
+              chatCardParameters.type === EChatCardTypes.NoActive
+          }"
+        >
+          {{ chatCardParameters.data.message }}
+        </div>
+        <div class="body-state" *ngIf="chatCardParameters.data.noChecked > 0">
+          <span>{{ chatCardParameters.data.noChecked }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

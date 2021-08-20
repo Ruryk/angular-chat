@@ -1,0 +1,69 @@
+@import "src/assets/scss/mixins";
+
+.chat-card-wrapper {
+  width: 100%;
+
+  .chat-card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .header-item {
+      display: flex;
+      align-items: center;
+
+      .user-photo {
+        margin-right: 20px;
+        position: relative;
+
+        .user-status {
+          top: 3px;
+          left: 3px;
+          width: 10px;
+          height: 10px;
+          border: 1.5px solid $white;
+          position: absolute;
+          background-color: $green;
+          border-radius: 50%;
+        }
+      }
+
+      .user-info .user-name {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .chat-card-body {
+    display: flex;
+    justify-content: space-between;
+
+    .body-message {
+      width: 100%;
+      max-width: 90%;
+    }
+
+    .body-state {
+      span {
+        background: $radicalRed;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        color: $white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.chat-card-wrapper.active {
+  background: linear-gradient(96.78deg, #7cb8f7 0%, #2a8bf2 100%);
+}
+
+.chat-card-wrapper.no-active {
+  background: $white;
+}

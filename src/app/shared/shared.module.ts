@@ -6,7 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ButtonComponent } from './custom-ui/button/component/button.component';
 import { InputComponent } from './custom-ui/input/component/input.component';
 import { SelectComponent } from './custom-ui/select/component/select.component';
-import { ChatCardComponent } from './custom-ui/chat-card/chat-card.component';
+import { ChatCardComponent } from './custom-ui/chat-card/component/chat-card.component';
 
 @NgModule({
   declarations: [

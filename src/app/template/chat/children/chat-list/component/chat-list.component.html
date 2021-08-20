@@ -13,4 +13,9 @@
   <app-select [selectParameters]="chatListConfig.selects.filter"></app-select>
 </div>
 
-<div class="chat-list-body"></div>
+<div class="chat-list-body">
+  <app-chat-card
+    *ngFor="let item of testCardList"
+    [chatCardParameters]="item"
+  ></app-chat-card>
+</div>
