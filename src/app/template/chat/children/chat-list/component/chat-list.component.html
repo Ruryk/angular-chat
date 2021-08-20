@@ -1,1 +1,13 @@
-<p>chat-list works!</p>
+<div class="chat-list-header">
+  <div class="chat-list-header-item">
+    <div class="item-title head-title-text">Chats</div>
+    <div class="item-subtitle head-subtitle-text">Recent Chats</div>
+  </div>
+  <div class="chat-list-header-item">
+    <app-button [buttonParameters]="chatListConfig.buttons.create"></app-button>
+  </div>
+</div>
+
+<div class="chat-list-search"></div>
+
+<div class="chat-list-body"></div>

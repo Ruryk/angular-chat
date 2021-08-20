@@ -1,0 +1,10 @@
+<ng-container [ngSwitch]="buttonParameters.type">
+  <ng-container *ngSwitchCase="EButtonTypes.Big">
+    <button class="btn" [ngClass]="EButtonTypes.Big">
+      <mat-icon svgIcon="plus"></mat-icon>
+      <span>{{ buttonParameters.text }}</span>
+    </button>
+  </ng-container>
+
+  <ng-container> </ng-container>
+</ng-container>

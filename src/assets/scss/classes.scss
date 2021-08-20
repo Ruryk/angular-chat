@@ -4,7 +4,15 @@
   font-size: $headFz;
   line-height: $headLh;
   color: $dark;
-  text-transform: uppercase;
+  font-weight: $boldFw;
+  text-transform: capitalize;
+}
+
+.head-subtitle-text{
+  font-size: $mediumFz;
+  line-height: $mediumLh;
+  color: $lynch;
+  text-transform: capitalize;
 }
 
 .nav-item-text{

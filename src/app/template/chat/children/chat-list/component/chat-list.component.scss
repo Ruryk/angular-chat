@@ -1,0 +1,24 @@
+:host {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-list-header {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+
+    .item-title {
+      margin-bottom: 15px;
+    }
+  }
+}
