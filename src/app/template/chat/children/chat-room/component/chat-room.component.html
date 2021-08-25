@@ -1,4 +1,15 @@
-<app-message
-  *ngFor="let message of testMessageParamsList"
-  [messageParameters]="message"
-></app-message>
+<div class="ng-container" *ngFor="let message of testMessageParamsList">
+  <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
+    <img [src]="message.photo" alt="member-photo" />
+  </div>
+  <app-message [messageParameters]="message"></app-message>
+  <div
+    *ngIf="message.type === EMessageTypes.User"
+    [ngSwitch]="message.status"
+    class="status"
+  >
+    <ng-container *ngSwitchCase="EMessageStatus.Send"></ng-container>
+    <ng-container *ngSwitchCase="EMessageStatus.Read"></ng-container>
+    <ng-container *ngSwitchCase="EMessageStatus.Dispatch"></ng-container>
+  </div>
+</div>

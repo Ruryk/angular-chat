@@ -13,6 +13,7 @@ export class MessageComponent {
   public EMessageTypes = EMessageTypes;
   public messageConfig = CMessageConfigList;
   public componentParameters: IMessageParameters = {
+    id: 0,
     text: '',
     type: '',
     date: 0,

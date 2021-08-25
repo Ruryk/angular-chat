@@ -1,8 +1,24 @@
 <ng-container [ngSwitch]="messageParameters.type">
   <ng-container *ngSwitchCase="EMessageTypes.Member">
-    <div class="message-body">
-      <div class="message-content message-text-member">
+    <div class="message-body" [ngClass]="EMessageTypes.Member">
+      <div
+        *ngIf="messageParameters.text"
+        class="message-content message-text-member"
+      >
         {{ messageParameters.text }}
+      </div>
+      <div *ngIf="messageParameters.file" class="message-file">
+        <a [href]="messageParameters.file.href" download>
+          <mat-icon svgIcon="file"></mat-icon>
+          <div class="file-description">
+            <div class="file-name message-text-member">
+              {{ messageParameters.file.name }}
+            </div>
+            <div class="file-size message-text-member">
+              {{ messageParameters.file.size / (1024 * 1024) }} MB
+            </div>
+          </div>
+        </a>
       </div>
       <div class="message-control">
         <app-button
@@ -15,5 +31,33 @@
     </div>
   </ng-container>
 
-  <ng-container *ngSwitchCase="EMessageTypes.User"> </ng-container>
+  <ng-container *ngSwitchCase="EMessageTypes.User">
+    <div class="message-date date-text">
+      {{ messageParameters.date | date: "h:mm:ss" }}
+    </div>
+    <div class="message-body" [ngClass]="EMessageTypes.User">
+      <div class="message-control">
+        <app-button
+          [buttonParameters]="messageConfig.buttons.action"
+        ></app-button>
+      </div>
+      <div
+        *ngIf="messageParameters.text"
+        class="message-content message-text-user"
+      >
+        {{ messageParameters.text }}
+      </div>
+      <div *ngIf="messageParameters.file" class="message-file">
+        <a [href]="messageParameters.file.href" download>
+          <mat-icon svgIcon="file"></mat-icon>
+          <div class="file-description">
+            <div class="file-name">{{ messageParameters.file.name }}</div>
+            <div class="file-size">
+              {{ messageParameters.file.size / 1024 }} MB
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </ng-container>
 </ng-container>
