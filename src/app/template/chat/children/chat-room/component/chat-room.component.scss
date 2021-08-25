@@ -1,4 +1,35 @@
+@import "src/assets/scss/mixins";
+
 :host {
   width: 100%;
   max-width: 850px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+
+  .member-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    max-width: 36px;
+    max-height: 36px;
+    img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  app-message {
+    width: 100%;
+  }
+
+  mat-icon {
+    color: $lynch;
+    margin-left: 15px;
+  }
 }

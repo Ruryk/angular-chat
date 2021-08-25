@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   EFileTypes,
   EMessageStatus,
@@ -17,21 +17,21 @@ export class ChatRoomComponent {
     {
       id: 0,
       type: EMessageTypes.Member,
-      photo: '',
+      photo: '/assets/img/nika.png',
       text: 'Hello! Finally found the time to write to you) I need your help in creating interactive animations for my mobile application.\n',
       date: 1629876134000,
     },
     {
       id: 1,
       type: EMessageTypes.Member,
-      photo: '',
+      photo: '/assets/img/nika.png',
       text: 'Can I send you files?',
       date: 1629876234000,
     },
     {
       id: 2,
       type: EMessageTypes.User,
-      status: '',
+      status: EMessageStatus.Read,
       text: 'Hey! Okay, send out.',
       date: 1629876334000,
     },
@@ -39,7 +39,7 @@ export class ChatRoomComponent {
       id: 3,
       type: EMessageTypes.Member,
       date: 1629876414000,
-      photo: '',
+      photo: '/assets/img/nika.png',
       file: {
         name: 'Style.zip',
         size: 42991616,
@@ -50,7 +50,7 @@ export class ChatRoomComponent {
     {
       id: 4,
       type: EMessageTypes.User,
-      status: '',
+      status: EMessageStatus.Send,
       text: 'Hello! I tweaked everything you asked. I am sending the finished file.',
       date: 1629876434000,
     },

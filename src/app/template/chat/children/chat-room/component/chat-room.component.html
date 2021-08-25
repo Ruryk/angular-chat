@@ -1,4 +1,4 @@
-<div class="ng-container" *ngFor="let message of testMessageParamsList">
+<div class="message" *ngFor="let message of testMessageParamsList">
   <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
     <img [src]="message.photo" alt="member-photo" />
   </div>
@@ -8,8 +8,14 @@
     [ngSwitch]="message.status"
     class="status"
   >
-    <ng-container *ngSwitchCase="EMessageStatus.Send"></ng-container>
-    <ng-container *ngSwitchCase="EMessageStatus.Read"></ng-container>
-    <ng-container *ngSwitchCase="EMessageStatus.Dispatch"></ng-container>
+    <ng-container *ngSwitchCase="EMessageStatus.Send">
+      <mat-icon svgIcon="send-message"></mat-icon>
+    </ng-container>
+    <ng-container *ngSwitchCase="EMessageStatus.Read">
+      <mat-icon svgIcon="read"></mat-icon>
+    </ng-container>
+    <ng-container *ngSwitchCase="EMessageStatus.Dispatch">
+      <mat-icon svgIcon="dispatch"></mat-icon>
+    </ng-container>
   </div>
 </div>
