@@ -6,6 +6,7 @@ export enum EButtonTypes {
   Video = 'video',
   Smile = 'smile',
   Attach = 'attach',
+  File = 'file',
   More = 'more',
-  MoreMessage = 'more-message'
+  MoreMessage = 'more-message',
 }

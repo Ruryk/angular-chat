@@ -11,4 +11,52 @@
       <mat-icon svgIcon="more"></mat-icon>
     </button>
   </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Attach">
+    <button class="btn" [ngClass]="EButtonTypes.Attach">
+      <mat-icon svgIcon="attach"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.More">
+    <button class="btn" [ngClass]="EButtonTypes.More">
+      <mat-icon svgIcon="more"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Send">
+    <button class="btn" [ngClass]="EButtonTypes.Send">
+      <mat-icon svgIcon="send"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Smile">
+    <button class="btn" [ngClass]="EButtonTypes.Smile">
+      <mat-icon svgIcon="smile"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Add">
+    <button class="btn" [ngClass]="EButtonTypes.Add">
+      <mat-icon svgIcon="plus"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Image">
+    <button class="btn" [ngClass]="EButtonTypes.Image">
+      <mat-icon svgIcon="image"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.File">
+    <button class="btn" [ngClass]="EButtonTypes.File">
+      <mat-icon svgIcon="file"></mat-icon>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Video">
+    <button class="btn" [ngClass]="EButtonTypes.Video">
+      <mat-icon svgIcon="video"></mat-icon>
+    </button>
+  </ng-container>
 </ng-container>

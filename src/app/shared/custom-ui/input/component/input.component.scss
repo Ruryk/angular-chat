@@ -15,20 +15,52 @@
     color: $lynch;
   }
 
-  input {
+  .input-item {
+    width: 100%;
+  }
+
+  input,
+  textarea {
     width: 100%;
     border: none;
     background: transparent;
     outline: none;
     color: $dark;
+    text-align: left;
     font-size: $mediumFz;
     line-height: $bigLh;
     caret-color: $blue;
     font-family: $fontFamilyMain;
+    resize: none;
   }
 
   input::placeholder {
     color: $lynch;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 6px;
+  }
+  /* Track */
+
+  textarea::-webkit-scrollbar-track {
+    background: transparent;
+    border: 17px solid rgba(255, 255, 255, 0);
+  }
+
+  /* Handle */
+  textarea::-webkit-scrollbar-thumb {
+    border: 17px solid rgba(255, 255, 255, 0);
+    background: $lynch;
+    box-shadow: 4px 4px 15px rgba(112, 124, 151, 0.05),
+      2px 2px 10px rgba(112, 124, 151, 0.1),
+      1px 1px 50px rgba(112, 124, 151, 0.15);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: $lynch;
   }
 }
 

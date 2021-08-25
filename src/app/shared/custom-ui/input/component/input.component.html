@@ -21,5 +21,13 @@
     </div>
   </ng-container>
 
+  <ng-container *ngSwitchCase="EInputTypes.Message">
+    <div class="input-wrapper">
+      <div class="input-item">
+        <textarea [placeholder]="inputParameters.placeholder"></textarea>
+      </div>
+    </div>
+  </ng-container>
+
   <ng-container></ng-container>
 </ng-container>

@@ -26,28 +26,53 @@
       </div>
     </div>
 
-    <div
-      class="chat-body"
-      *ngFor="let message of chatRoomData.chatData.messageList"
-    >
-      <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
-        <img [src]="message.photo" alt="member-photo" />
-      </div>
-      <app-message [messageParameters]="message"></app-message>
+    <div class="chat-body">
       <div
-        *ngIf="message.type === EMessageTypes.User"
-        [ngSwitch]="message.status"
-        class="status"
+        class="chat-body-item"
+        *ngFor="let message of chatRoomData.chatData.messageList"
       >
-        <ng-container *ngSwitchCase="EMessageStatus.Send">
-          <mat-icon svgIcon="send-message"></mat-icon>
-        </ng-container>
-        <ng-container *ngSwitchCase="EMessageStatus.Read">
-          <mat-icon svgIcon="read"></mat-icon>
-        </ng-container>
-        <ng-container *ngSwitchCase="EMessageStatus.Dispatch">
-          <mat-icon svgIcon="dispatch"></mat-icon>
-        </ng-container>
+        <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
+          <img [src]="message.photo" alt="member-photo" />
+        </div>
+        <app-message [messageParameters]="message"></app-message>
+        <div
+          *ngIf="message.type === EMessageTypes.User"
+          [ngSwitch]="message.status"
+          class="status"
+        >
+          <ng-container *ngSwitchCase="EMessageStatus.Send">
+            <mat-icon svgIcon="send-message"></mat-icon>
+          </ng-container>
+          <ng-container *ngSwitchCase="EMessageStatus.Read">
+            <mat-icon svgIcon="read"></mat-icon>
+          </ng-container>
+          <ng-container *ngSwitchCase="EMessageStatus.Dispatch">
+            <mat-icon svgIcon="dispatch"></mat-icon>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-control">
+      <div class="chat-control-body">
+        <div class="chat-control-item">
+          <app-button
+            [buttonParameters]="chatRoomConfig.buttons.add"
+          ></app-button>
+        </div>
+        <div class="chat-control-item">
+          <app-input
+            [inputParameters]="chatRoomConfig.inputs.message"
+          ></app-input>
+        </div>
+        <div class="chat-control-item">
+          <app-button
+            [buttonParameters]="chatRoomConfig.buttons.smile"
+          ></app-button>
+          <app-button
+            [buttonParameters]="chatRoomConfig.buttons.send"
+          ></app-button>
+        </div>
       </div>
     </div>
   </ng-container>

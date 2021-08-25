@@ -35,12 +35,53 @@
     10px 6px 25px rgba(42, 139, 242, 0.15);
 }
 
-.more-message {
-  button {
-  }
-
+.more-message,
+.more,
+.attach {
   mat-icon {
     color: $lynch;
+  }
+}
+.more-message {
+  mat-icon {
     transform: rotate(90deg);
+  }
+}
+.more,
+.attach {
+  width: 52px;
+  height: 52px;
+  background: $white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.03),
+    0px 7px 25px rgba(42, 139, 242, 0.03), 0px 5px 25px rgba(42, 139, 242, 0.07);
+}
+
+.add,
+.image,
+.video,
+.file,
+.send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(325.78deg, #2a8bf2 14.76%, #7cb8f7 87.3%);
+  /* Shadow Active Icon */
+  border-radius: 50%;
+  transition: 0.5s all ease;
+  mat-icon {
+    color: $white;
+  }
+
+  &:hover {
+    transition: 0.5s all ease;
+    box-shadow: 4px 4px 25px rgba(42, 139, 242, 0.15),
+      2px 2px 25px rgba(42, 139, 242, 0.05),
+      4px 6px 10px rgba(42, 139, 242, 0.15);
   }
 }
