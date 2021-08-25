@@ -5,9 +5,40 @@
   max-width: 850px;
 }
 
-.message {
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+  background-color: $white;
+  padding: 30px 38px 30px 60px;
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-item:first-child {
+    .chat-photo {
+      margin-right: 20px;
+    }
+    .chat-info {
+      .chat-name {
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  &-item:last-child {
+  }
+}
+
+.chat-body {
   display: flex;
   align-items: center;
+  background-color: $white;
+  padding: 30px 60px 30px 60px;
 
   .member-photo {
     display: flex;

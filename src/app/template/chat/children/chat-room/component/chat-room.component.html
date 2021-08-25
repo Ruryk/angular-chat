@@ -1,21 +1,58 @@
-<div class="message" *ngFor="let message of testMessageParamsList">
-  <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
-    <img [src]="message.photo" alt="member-photo" />
-  </div>
-  <app-message [messageParameters]="message"></app-message>
-  <div
-    *ngIf="message.type === EMessageTypes.User"
-    [ngSwitch]="message.status"
-    class="status"
-  >
-    <ng-container *ngSwitchCase="EMessageStatus.Send">
-      <mat-icon svgIcon="send-message"></mat-icon>
-    </ng-container>
-    <ng-container *ngSwitchCase="EMessageStatus.Read">
-      <mat-icon svgIcon="read"></mat-icon>
-    </ng-container>
-    <ng-container *ngSwitchCase="EMessageStatus.Dispatch">
-      <mat-icon svgIcon="dispatch"></mat-icon>
-    </ng-container>
-  </div>
-</div>
+<ng-container *ngrxLet="chatRoomData$ as chatRoomData">
+  <ng-container *ngIf="chatRoomData.chatData">
+    <div class="chat-header">
+      <div class="chat-header-item">
+        <div class="chat-photo card-photo">
+          <a [href]="['/']"
+            ><img [src]="chatRoomData.chatData.photo" alt="chat-photo"
+          /></a>
+        </div>
+        <div class="chat-info">
+          <div class="chat-name user-name-text">
+            {{ chatRoomData.chatData.name }}
+          </div>
+          <div class="chat-online user-action-text">
+            {{ chatRoomData.chatData.online | date: "h:mm:ss" }}
+          </div>
+        </div>
+      </div>
+      <div class="chat-header-item">
+        <app-button
+          [buttonParameters]="chatRoomConfig.buttons.attach"
+        ></app-button>
+        <app-button
+          [buttonParameters]="chatRoomConfig.buttons.more"
+        ></app-button>
+      </div>
+    </div>
+
+    <div
+      class="chat-body"
+      *ngFor="let message of chatRoomData.chatData.messageList"
+    >
+      <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
+        <img [src]="message.photo" alt="member-photo" />
+      </div>
+      <app-message [messageParameters]="message"></app-message>
+      <div
+        *ngIf="message.type === EMessageTypes.User"
+        [ngSwitch]="message.status"
+        class="status"
+      >
+        <ng-container *ngSwitchCase="EMessageStatus.Send">
+          <mat-icon svgIcon="send-message"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="EMessageStatus.Read">
+          <mat-icon svgIcon="read"></mat-icon>
+        </ng-container>
+        <ng-container *ngSwitchCase="EMessageStatus.Dispatch">
+          <mat-icon svgIcon="dispatch"></mat-icon>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!chatRoomData.chatData">
+    <div class="chat-room-empty head-subtitle-text">Select chat</div>
+  </ng-container>
+</ng-container>
