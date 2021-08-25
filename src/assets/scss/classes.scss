@@ -58,8 +58,11 @@
 
 .message-text-member,
 .message-text-user {
+  font-family: $fontFamilyMain;
+  font-weight: 500;
   font-size: $standardFz;
-  line-height: $bigLh;
+  //line-height: $bigLh;
+  line-height: 26px;
 }
 
 .message-text-member {

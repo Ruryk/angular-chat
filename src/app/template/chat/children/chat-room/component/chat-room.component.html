@@ -1,1 +1,4 @@
-<p>chat-room works!</p>
+<app-message
+  *ngFor="let message of testMessageParamsList"
+  [messageParameters]="message"
+></app-message>

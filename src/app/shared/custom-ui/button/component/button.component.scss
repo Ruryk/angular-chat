@@ -34,3 +34,13 @@
     4px 4px 25px rgba(42, 139, 242, 0.05),
     10px 6px 25px rgba(42, 139, 242, 0.15);
 }
+
+.more-message {
+  button {
+  }
+
+  mat-icon {
+    color: $lynch;
+    transform: rotate(90deg);
+  }
+}

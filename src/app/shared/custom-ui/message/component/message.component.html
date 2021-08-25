@@ -1,0 +1,19 @@
+<ng-container [ngSwitch]="messageParameters.type">
+  <ng-container *ngSwitchCase="EMessageTypes.Member">
+    <div class="message-body">
+      <div class="message-content message-text-member">
+        {{ messageParameters.text }}
+      </div>
+      <div class="message-control">
+        <app-button
+          [buttonParameters]="messageConfig.buttons.action"
+        ></app-button>
+      </div>
+    </div>
+    <div class="message-date date-text">
+      {{ messageParameters.date | date: "h:mm:ss" }}
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EMessageTypes.User"> </ng-container>
+</ng-container>
