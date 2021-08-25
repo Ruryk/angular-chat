@@ -15,7 +15,9 @@
 
 <div class="chat-list-body">
   <app-chat-card
-    *ngFor="let item of testCardList"
-    [chatCardParameters]="item"
+    *ngFor="let chat of chatListData$ | ngrxPush"
+    [chatCardParameters]="chat"
+    [activeChatId]="activeChatId$ | ngrxPush"
+    (click)="setActiveChat(chat.id)"
   ></app-chat-card>
 </div>

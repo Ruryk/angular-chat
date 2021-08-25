@@ -1,5 +1,9 @@
 @import "src/assets/scss/mixins";
 
+:host {
+  cursor: pointer;
+}
+
 .chat-card-wrapper {
   width: 100%;
 

@@ -9,9 +9,8 @@ import { IChatCardParameters } from '../chat-card.interfaces';
   styleUrls: ['./chat-card.component.scss'],
 })
 export class ChatCardComponent {
-  public EChatCardTypes = EChatCardTypes;
   public componentParameters: IChatCardParameters = {
-    type: '',
+    id: '',
     data: {
       firstName: 'string',
       lastName: 'string',
@@ -23,6 +22,8 @@ export class ChatCardComponent {
       status: 'string',
     },
   };
+
+  @Input() activeChatId: string | null = null;
 
   @Input() set chatCardParameters(params: IChatCardParameters) {
     this.componentParameters = params;

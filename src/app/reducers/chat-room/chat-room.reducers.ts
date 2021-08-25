@@ -66,17 +66,17 @@ export const chatRoomDataReducer = (
   state = chatRoomState,
   action: Action
 ): IChatRoomState => {
-  const userDataActions = action as ChatRoomActions;
-  switch (userDataActions.type) {
+  const chatRoomActions = action as ChatRoomActions;
+  switch (chatRoomActions.type) {
     case chatRoomActionsType.setChatId:
       return {
         ...state,
-        chatId: userDataActions.payload.id,
+        chatId: chatRoomActions.payload.id,
       };
     case chatRoomActionsType.setChatData:
       return {
         ...state,
-        chatData: userDataActions.payload.chatData,
+        chatData: chatRoomActions.payload.chatData,
       };
     default:
       return state;

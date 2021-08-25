@@ -1,69 +1,62 @@
-<ng-container [ngSwitch]="chatCardParameters.type">
-  <ng-container>
-    <div
-      class="chat-card-wrapper user-card-container"
-      [ngClass]="chatCardParameters.type"
-    >
-      <div class="chat-card-header">
-        <div class="header-item">
-          <div class="user-photo card-photo">
-            <img
-              [src]="'/assets/img/' + componentParameters.data.photo + '.png'"
-              alt="user-photo"
-            />
+<ng-container>
+  <div
+    class="chat-card-wrapper user-card-container"
+    [ngClass]="{
+      active: chatCardParameters.id === activeChatId,
+      'no-active': chatCardParameters.id !== activeChatId
+    }"
+  >
+    <div class="chat-card-header">
+      <div class="header-item">
+        <div class="user-photo card-photo">
+          <img
+            [src]="'/assets/img/' + componentParameters.data.photo + '.png'"
+            alt="user-photo"
+          />
 
-            <div
-              *ngIf="chatCardParameters.data.online"
-              class="user-status"
-            ></div>
-          </div>
-          <div class="user-info">
-            <div class="user-name user-name-text">
-              {{ chatCardParameters.data.firstName }}
-              {{ chatCardParameters.data.lastName }}
-            </div>
-            <div
-              class="user-status"
-              [ngClass]="{
-                'user-action-text-active':
-                  chatCardParameters.type === EChatCardTypes.Active,
-                'user-action-text':
-                  chatCardParameters.type === EChatCardTypes.NoActive
-              }"
-            >
-              {{ chatCardParameters.data.status }}
-            </div>
-          </div>
+          <div *ngIf="chatCardParameters.data.online" class="user-status"></div>
         </div>
-        <div class="header-item">
+        <div class="user-info">
+          <div class="user-name user-name-text">
+            {{ chatCardParameters.data.firstName }}
+            {{ chatCardParameters.data.lastName }}
+          </div>
           <div
-            class="date-message"
+            class="user-status"
             [ngClass]="{
-              'date-text-active':
-                chatCardParameters.type === EChatCardTypes.Active,
-              'date-text': chatCardParameters.type === EChatCardTypes.NoActive
+              'user-action-text-active': chatCardParameters.id === activeChatId,
+              'user-action-text': chatCardParameters.id !== activeChatId
             }"
           >
-            {{ chatCardParameters.data.time | date: "h:mm:ss" }}
+            {{ chatCardParameters.data.status }}
           </div>
         </div>
       </div>
-      <div class="chat-card-body">
+      <div class="header-item">
         <div
-          class="body-message"
+          class="date-message"
           [ngClass]="{
-            'message-text-member':
-              chatCardParameters.type === EChatCardTypes.Active,
-            'message-text-user':
-              chatCardParameters.type === EChatCardTypes.NoActive
+            'date-text-active': chatCardParameters.id === activeChatId,
+            'date-text': chatCardParameters.id !== activeChatId
           }"
         >
-          {{ chatCardParameters.data.message }}
-        </div>
-        <div class="body-state" *ngIf="chatCardParameters.data.noChecked > 0">
-          <span>{{ chatCardParameters.data.noChecked }}</span>
+          {{ chatCardParameters.data.time | date: "h:mm:ss" }}
         </div>
       </div>
     </div>
-  </ng-container>
+    <div class="chat-card-body">
+      <div
+        class="body-message"
+        [ngClass]="{
+          'message-text-member': chatCardParameters.id === activeChatId,
+          'message-text-user': chatCardParameters.id !== activeChatId
+        }"
+      >
+        {{ chatCardParameters.data.message }}
+      </div>
+      <div class="body-state" *ngIf="chatCardParameters.data.noChecked > 0">
+        <span>{{ chatCardParameters.data.noChecked }}</span>
+      </div>
+    </div>
+  </div>
 </ng-container>

@@ -1,5 +1,5 @@
 export interface IChatCardParameters {
-  type: string;
+  id: string;
   data: IChatUserData;
 }
 
