@@ -69,7 +69,13 @@
             ></app-input>
             <div class="file-item" *ngIf="file$ | ngrxPush">
               <mat-icon svgIcon="file"></mat-icon>
-              <div class="file-name">{{ (file$ | ngrxPush).file.name }}</div>
+              <div class="file-name" *ngrxLet="file$ as fileObject">
+                {{
+                  $any(fileObject).file.name.length > 20
+                    ? ($any(fileObject).file.name | slice: 0:20) + "..."
+                    : $any(fileObject).file.name
+                }}
+              </div>
               <mat-icon svgIcon="plus" (click)="deleteFile()"></mat-icon>
             </div>
           </div>
