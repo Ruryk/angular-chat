@@ -29,17 +29,20 @@
 }
 
 .chat-list-search {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   max-width: 580px;
-
-  app-input {
+  form {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-  }
 
-  app-select {
-    max-width: 180px;
+    app-input {
+      width: 100%;
+    }
+
+    app-select {
+      max-width: 180px;
+    }
   }
 }
 

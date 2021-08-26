@@ -6,6 +6,7 @@ import { ChatListRoutingModule } from './chat-list-routing.module';
 import { SharedModule } from '../../../../shared/shared.module';
 import { UserCardModule } from '../../../../shared/user-card/user-card.module';
 import { ReactiveComponentModule } from '@ngrx/component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ChatListComponent],
@@ -15,6 +16,7 @@ import { ReactiveComponentModule } from '@ngrx/component';
     SharedModule,
     UserCardModule,
     ReactiveComponentModule,
+    ReactiveFormsModule,
   ],
   exports: [ChatListComponent],
 })

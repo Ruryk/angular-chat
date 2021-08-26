@@ -9,8 +9,16 @@
 </div>
 
 <div class="chat-list-search">
-  <app-input [inputParameters]="chatListConfig.inputs.search"></app-input>
-  <app-select [selectParameters]="chatListConfig.selects.filter"></app-select>
+  <form [formGroup]="chatListForm">
+    <app-input
+      formControlName="search"
+      [inputParameters]="chatListConfig.inputs.search"
+    ></app-input>
+    <app-select
+      formControlName="filter"
+      [selectParameters]="chatListConfig.selects.filter"
+    ></app-select>
+  </form>
 </div>
 
 <div class="chat-list-body">

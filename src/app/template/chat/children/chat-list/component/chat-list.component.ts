@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { CChatListConfigList } from '../chat-list.config';
 import { ChatListDataService } from '../services/chat-list-data/chat-list-data.service';
 import { IChatCardParameters } from '../../../../../shared/custom-ui/chat-card/chat-card.interfaces';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-chat-list',
@@ -16,6 +17,11 @@ export class ChatListComponent {
     this.chatListDataService.chatListData$;
   public readonly activeChatId$: BehaviorSubject<string | null> =
     this.chatListDataService.activeChatId$;
+  public readonly chatListForm = new FormGroup({
+    search: new FormControl(null),
+    filter: new FormControl(null),
+  });
+
   constructor(public chatListDataService: ChatListDataService) {}
 
   setActiveChat(id: string): void {
