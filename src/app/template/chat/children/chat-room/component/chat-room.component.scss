@@ -101,6 +101,9 @@
   &-item:nth-child(2) {
     display: flex;
     flex: 1 0 auto;
+    form {
+      width: 100%;
+    }
     app-input {
       width: 100%;
     }

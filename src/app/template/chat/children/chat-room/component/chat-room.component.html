@@ -54,26 +54,29 @@
     </div>
 
     <div class="chat-control">
-      <div class="chat-control-body">
-        <div class="chat-control-item">
-          <app-button
-            [buttonParameters]="chatRoomConfig.buttons.add"
-          ></app-button>
+      <form [formGroup]="messageForm" (submit)="sendMessage($event)">
+        <div class="chat-control-body">
+          <div class="chat-control-item">
+            <app-button
+              [buttonParameters]="chatRoomConfig.buttons.add"
+            ></app-button>
+          </div>
+          <div class="chat-control-item">
+            <app-input
+              formControlName="message"
+              [inputParameters]="chatRoomConfig.inputs.message"
+            ></app-input>
+          </div>
+          <div class="chat-control-item">
+            <app-button
+              [buttonParameters]="chatRoomConfig.buttons.smile"
+            ></app-button>
+            <app-button
+              [buttonParameters]="chatRoomConfig.buttons.send"
+            ></app-button>
+          </div>
         </div>
-        <div class="chat-control-item">
-          <app-input
-            [inputParameters]="chatRoomConfig.inputs.message"
-          ></app-input>
-        </div>
-        <div class="chat-control-item">
-          <app-button
-            [buttonParameters]="chatRoomConfig.buttons.smile"
-          ></app-button>
-          <app-button
-            [buttonParameters]="chatRoomConfig.buttons.send"
-          ></app-button>
-        </div>
-      </div>
+      </form>
     </div>
   </ng-container>
 

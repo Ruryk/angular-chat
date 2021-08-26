@@ -16,6 +16,7 @@
           (focusout)="focus = false"
           type="text"
           [placeholder]="inputParameters.placeholder"
+          [value]="value"
           (input)="change($event)"
         />
       </div>
@@ -25,7 +26,11 @@
   <ng-container *ngSwitchCase="EInputTypes.Message">
     <div class="input-wrapper">
       <div class="input-item">
-        <textarea [placeholder]="inputParameters.placeholder"></textarea>
+        <textarea
+          [value]="value"
+          [placeholder]="inputParameters.placeholder"
+          (input)="change($event)"
+        ></textarea>
       </div>
     </div>
   </ng-container>

@@ -10,6 +10,7 @@ import { InputComponent } from './custom-ui/input/component/input.component';
 import { SelectComponent } from './custom-ui/select/component/select.component';
 import { ChatCardComponent } from './custom-ui/chat-card/component/chat-card.component';
 import { MessageComponent } from './custom-ui/message/component/message.component';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MessageComponent } from './custom-ui/message/component/message.componen
     MatSelectModule,
     MatMenuModule,
     PickerModule,
+    ReactiveComponentModule,
   ],
   exports: [
     ButtonComponent,
