@@ -27,6 +27,8 @@ export class SvgService {
     'power',
     'read',
     'send-message',
+    'delete',
+    'edit',
   ];
 
   constructor(
