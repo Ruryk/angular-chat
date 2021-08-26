@@ -6,3 +6,8 @@ export interface IChatRoomData {
   online: number;
   messageList: IMessageParameters[];
 }
+
+export interface IMessageData {
+  message: string;
+  file: File;
+}

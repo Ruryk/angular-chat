@@ -30,6 +30,7 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
     this.filesService.file$;
   public readonly messageForm = new FormGroup({
     message: new FormControl(''),
+    file: new FormControl(null),
   });
   public unsubscribe$: Subject<void> = new Subject<void>();
 
@@ -41,7 +42,9 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
 
   sendMessage(event: Event): void {
     event.preventDefault();
-    console.log(this.messageForm.value);
+    const messageData = this.messageForm.value;
+    this.chatRoomDataService.sendMessage(messageData);
+    this.messageForm.controls.message.setValue('');
   }
 
   ngOnInit(): void {
@@ -54,10 +57,9 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
       });
     this.filesService.file$
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((file) => {
-        if (file) {
-          console.log(file);
-        }
+      .subscribe((fileObject: { file: any; type: string } | null) => {
+        const file = fileObject?.file || null;
+        this.messageForm.controls.file.setValue(file);
       });
   }
 
