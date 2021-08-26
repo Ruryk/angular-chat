@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import {
   EFileTypes,
@@ -12,6 +12,7 @@ import { CChatRoomConfigList } from '../chat-room.config';
 import { FormControl, FormGroup } from '@angular/forms';
 import { EmojiService } from '../../../../../services/emoji/emoji.service';
 import { takeUntil } from 'rxjs/operators';
+import { FilesService } from '../../../../../services/files/files.service';
 
 @Component({
   selector: 'app-chat-room',
@@ -25,6 +26,8 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
   public chatRoomData$: Observable<{
     chatData: IChatRoomData | null;
   }> = this.chatRoomDataService.charRoomData$;
+  public file$: BehaviorSubject<{ file: any; type: string } | null> =
+    this.filesService.file$;
   public readonly messageForm = new FormGroup({
     message: new FormControl(''),
   });
@@ -32,7 +35,8 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
 
   constructor(
     public chatRoomDataService: ChatRoomDataService,
-    public emojiService: EmojiService
+    public emojiService: EmojiService,
+    public filesService: FilesService
   ) {}
 
   sendMessage(event: Event): void {
@@ -48,6 +52,17 @@ export class ChatRoomComponent implements OnInit, OnDestroy {
         const newValue = prevValue + value;
         this.messageForm.controls.message.setValue(newValue);
       });
+    this.filesService.file$
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((file) => {
+        if (file) {
+          console.log(file);
+        }
+      });
+  }
+
+  deleteFile(): void {
+    this.filesService.deleteFile();
   }
 
   ngOnDestroy(): void {

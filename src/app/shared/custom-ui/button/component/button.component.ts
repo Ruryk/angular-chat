@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { IButtonsParameters } from '../button.interfaces';
 import { EButtonTypes } from '../button.enums';
 import { EmojiService } from '../../../../services/emoji/emoji.service';
+import { FilesService } from '../../../../services/files/files.service';
 
 @Component({
   selector: 'app-button',
@@ -23,7 +24,10 @@ export class ButtonComponent {
     return this.componentParameters;
   }
 
-  constructor(public emojiService: EmojiService) {}
+  constructor(
+    public emojiService: EmojiService,
+    public filesService: FilesService
+  ) {}
 
   toggleEmojiPanelState(): void {
     const state = !this.emojiService.emojiPanelState;
@@ -49,6 +53,11 @@ export class ButtonComponent {
         break;
     }
     inputFile.click();
+    inputFile.onchange = (event: any) => {
+      const file = event.target.files[0];
+      this.filesService.file$.next({ file, type: file.type });
+      this.addFilePanelActive = !this.addFilePanelActive;
+    };
     this.addFilePanelActive = !this.addFilePanelActive;
   }
 }

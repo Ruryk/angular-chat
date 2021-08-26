@@ -101,11 +101,33 @@
   &-item:nth-child(2) {
     display: flex;
     flex: 1 0 auto;
+    min-height: 98px;
     form {
       width: 100%;
     }
     app-input {
       width: 100%;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      background: rgba($blue, 0.3);
+      padding: 10px 13px;
+      border-radius: 20px;
+      color: $blue;
+      font-size: $smallFz;
+      margin-left: 50px;
+      mat-icon {
+        color: $blue;
+        margin-right: 10px;
+      }
+
+      mat-icon:last-child {
+        cursor: pointer;
+        margin-left: 20px;
+        transform: rotate(45deg);
+      }
     }
   }
 

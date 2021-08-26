@@ -63,9 +63,15 @@
           </div>
           <div class="chat-control-item">
             <app-input
+              *ngIf="!(file$ | ngrxPush)"
               formControlName="message"
               [inputParameters]="chatRoomConfig.inputs.message"
             ></app-input>
+            <div class="file-item" *ngIf="file$ | ngrxPush">
+              <mat-icon svgIcon="file"></mat-icon>
+              <div class="file-name">{{ (file$ | ngrxPush).file.name }}</div>
+              <mat-icon svgIcon="plus" (click)="deleteFile()"></mat-icon>
+            </div>
           </div>
           <div class="chat-control-item">
             <app-button
