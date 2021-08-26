@@ -13,15 +13,33 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="EButtonTypes.Attach">
-    <button class="btn" [ngClass]="EButtonTypes.Attach">
+    <button
+      mat-button
+      [matMenuTriggerFor]="attachMenu"
+      class="btn"
+      [ngClass]="EButtonTypes.Attach"
+    >
       <mat-icon svgIcon="attach"></mat-icon>
     </button>
+    <mat-menu #attachMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
   </ng-container>
 
   <ng-container *ngSwitchCase="EButtonTypes.More">
-    <button class="btn" [ngClass]="EButtonTypes.More">
+    <button
+      mat-button
+      [matMenuTriggerFor]="moreMenu"
+      class="btn"
+      [ngClass]="EButtonTypes.More"
+    >
       <mat-icon svgIcon="more"></mat-icon>
     </button>
+    <mat-menu #moreMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
   </ng-container>
 
   <ng-container *ngSwitchCase="EButtonTypes.Send">
@@ -31,9 +49,18 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="EButtonTypes.Smile">
-    <button class="btn" [ngClass]="EButtonTypes.Smile">
+    <button
+      mat-button
+      [matMenuTriggerFor]="smileMenu"
+      class="btn"
+      [ngClass]="EButtonTypes.Smile"
+    >
       <mat-icon svgIcon="smile"></mat-icon>
     </button>
+    <mat-menu #smileMenu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
   </ng-container>
 
   <ng-container *ngSwitchCase="EButtonTypes.Add">

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 import { ButtonComponent } from './custom-ui/button/component/button.component';
 import { InputComponent } from './custom-ui/input/component/input.component';
@@ -18,7 +19,13 @@ import { MessageComponent } from './custom-ui/message/component/message.componen
     ChatCardComponent,
     MessageComponent,
   ],
-  imports: [CommonModule, MatIconModule, MatSelectModule, MatMenuModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatSelectModule,
+    MatMenuModule,
+    PickerModule,
+  ],
   exports: [
     ButtonComponent,
     InputComponent,
