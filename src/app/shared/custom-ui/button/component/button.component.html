@@ -91,13 +91,30 @@
         class="add-file-message-panel"
         [ngClass]="{ active: addFilePanelActive }"
       >
-        <button type="button" class="btn" [ngClass]="EButtonTypes.Video">
+        <button
+          type="button"
+          class="btn"
+          [ngClass]="EButtonTypes.Video"
+          (click)="openFileDialog(EButtonTypes.Video)"
+        >
           <mat-icon svgIcon="film"></mat-icon>
         </button>
-        <button type="button" class="btn" [ngClass]="EButtonTypes.Image">
+
+        <button
+          type="button"
+          class="btn"
+          [ngClass]="EButtonTypes.Image"
+          (click)="openFileDialog(EButtonTypes.Image)"
+        >
           <mat-icon svgIcon="img"></mat-icon>
         </button>
-        <button type="button" class="btn" [ngClass]="EButtonTypes.File">
+
+        <button
+          type="button"
+          class="btn"
+          [ngClass]="EButtonTypes.File"
+          (click)="openFileDialog(EButtonTypes.File)"
+        >
           <mat-icon svgIcon="file"></mat-icon>
         </button>
       </div>

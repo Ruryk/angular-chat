@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { IButtonsParameters } from '../button.interfaces';
 import { EButtonTypes } from '../button.enums';
@@ -32,5 +32,23 @@ export class ButtonComponent {
 
   addEmoji(event: any): void {
     this.emojiService.emojiValue$.next(event.emoji.native);
+  }
+
+  openFileDialog(type: string): void {
+    const inputFile = document.createElement('input');
+    inputFile.type = 'file';
+    switch (type) {
+      case EButtonTypes.Video:
+        inputFile.accept = 'video/*';
+        break;
+      case EButtonTypes.Image:
+        inputFile.accept = 'image/*';
+        break;
+      default:
+        inputFile.accept = '.pdf, .txt, .doc, .docx, .xls, .zip, .rar';
+        break;
+    }
+    inputFile.click();
+    this.addFilePanelActive = !this.addFilePanelActive;
   }
 }
