@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 
+// import { Observable } from 'rxjs';
+// import { io } from 'socket.io-client';
+
 import { IState } from '../../../reducers';
 import { CApi } from '../../../contstantes/constanses';
 import { environment } from '../../../../environments/environment';
@@ -15,7 +18,17 @@ import { SetChatDataAction } from '../../../reducers/chat-room/chat-room.actions
   providedIn: 'root',
 })
 export class ChatDataService {
-  constructor(private http: HttpClient, private store: Store<IState>) {}
+  // socket: any;
+  constructor(private http: HttpClient, private store: Store<IState>) {
+    // this.socket = io('http://localhost:3000');
+    // this.socket.on('connected', () => {
+    //   console.log('connected !');
+    //
+    //   this.emit('msgToServer', 'hello');
+    // });
+    //
+    // this.listen('msgToClient').subscribe((res) => console.log(res));
+  }
 
   getChatListData(): void {
     this.http
@@ -42,4 +55,16 @@ export class ChatDataService {
       this.store.dispatch(new SetChatDataAction({ chatData: null }));
     }
   }
+
+  // listen(eventName: string): Observable<any> {
+  //   return new Observable((subscriber) => {
+  //     this.socket.on(eventName, (data: any) => {
+  //       subscriber.next(data);
+  //     });
+  //   });
+  // }
+  //
+  // emit(eventName: string, data: any): void {
+  //   this.socket.emit(eventName, data);
+  // }
 }

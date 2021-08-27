@@ -48,20 +48,6 @@ const chatListState: IChatListState = {
       status: 'last online 5 hours ago',
     },
   },
-  aqt: {
-    id: 'aqt',
-    data: {
-      firstName: 'Jared',
-      lastName: 'Sunn',
-      photo: 'jared',
-      noChecked: 1,
-      message:
-        'Most of its text is made up from sections 1.10.32–3 of Cicero De finibus bonorum et malorum.',
-      time: 1629472112000,
-      online: true,
-      status: 'records voice message',
-    },
-  },
 };
 
 export const chatListDataReducer = (
