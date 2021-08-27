@@ -1,5 +1,8 @@
 export enum EButtonTypes {
   Big = 'big',
+  MediumSuccess = 'medium-success',
+  MediumFail = 'medium-fail',
+  Close = 'close',
   Add = 'add',
   Image = 'image',
   Send = 'send',

@@ -36,5 +36,27 @@
     </div>
   </ng-container>
 
-  <ng-container></ng-container>
+  <ng-container *ngSwitchCase="EInputTypes.UserSearch"
+    ><div
+      class="input-wrapper"
+      [ngClass]="{
+        'user-search': EInputTypes.UserSearch,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <mat-icon svgIcon="person"></mat-icon>
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="text"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
 </ng-container>

@@ -6,6 +6,25 @@
     </button>
   </ng-container>
 
+  <ng-container *ngSwitchCase="EButtonTypes.MediumSuccess">
+    <button class="btn" type="submit" [ngClass]="EButtonTypes.MediumSuccess">
+      <mat-icon svgIcon="plus"></mat-icon>
+      <span>{{ buttonParameters.text }}</span>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.MediumFail">
+    <button class="btn" type="button" [ngClass]="EButtonTypes.MediumFail">
+      <span>{{ buttonParameters.text }}</span>
+    </button>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EButtonTypes.Close">
+    <button class="btn" type="button" [ngClass]="EButtonTypes.Close">
+      <mat-icon svgIcon="plus"></mat-icon>
+    </button>
+  </ng-container>
+
   <ng-container *ngSwitchCase="EButtonTypes.MoreMessage">
     <button
       type="button"

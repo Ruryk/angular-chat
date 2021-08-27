@@ -1,0 +1,51 @@
+@import "src/assets/scss/mixins";
+
+::ng-deep {
+  .mat-dialog-container {
+    min-width: 300px !important;
+    padding: 0;
+  }
+}
+
+:host {
+  font-family: $fontFamilyMain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $whiteLilac;
+  padding: 20px;
+  position: relative;
+
+  div {
+    margin-bottom: 30px;
+  }
+  div:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.modal-close {
+  top: 15px;
+  right: 10px;
+  position: absolute;
+}
+
+.modal-header,
+.modal-body,
+.modal-action {
+  display: flex;
+}
+
+.modal-header,
+.modal-body {
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-action {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.modal-header {
+}
