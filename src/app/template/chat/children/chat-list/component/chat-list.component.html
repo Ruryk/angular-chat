@@ -4,7 +4,10 @@
     <div class="item-subtitle head-subtitle-text">Recent Chats</div>
   </div>
   <div class="chat-list-header-item">
-    <app-button [buttonParameters]="chatListConfig.buttons.create"></app-button>
+    <app-button
+      [buttonParameters]="chatListConfig.buttons.create"
+      (click)="openAddChatModal()"
+    ></app-button>
   </div>
 </div>
 

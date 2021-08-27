@@ -5,6 +5,8 @@ import { CChatListConfigList } from '../chat-list.config';
 import { ChatListDataService } from '../services/chat-list-data/chat-list-data.service';
 import { IChatCardParameters } from '../../../../../shared/custom-ui/chat-card/chat-card.interfaces';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AddChatModalComponent } from '../children/add-chat-modal/component/add-chat-modal.component';
 
 @Component({
   selector: 'app-chat-list',
@@ -22,7 +24,16 @@ export class ChatListComponent {
     filter: new FormControl(null),
   });
 
-  constructor(public chatListDataService: ChatListDataService) {}
+  constructor(
+    public chatListDataService: ChatListDataService,
+    public dialog: MatDialog
+  ) {}
+
+  openAddChatModal(): void {
+    const addChatModalRef = this.dialog.open(AddChatModalComponent);
+
+    addChatModalRef.afterClosed().subscribe((result) => {});
+  }
 
   setActiveChat(id: string): void {
     this.activeChatId$.next(id);
