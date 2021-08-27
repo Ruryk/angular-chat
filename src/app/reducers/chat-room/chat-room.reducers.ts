@@ -11,7 +11,7 @@ import {
 export const chatRoomNode = 'chatRoomData';
 
 const chatRoomState: IChatRoomState = {
-  chatId: 0,
+  chatId: null,
   chatData: {
     name: 'Nika Jerrardo',
     photo: '/assets/img/nika.png',

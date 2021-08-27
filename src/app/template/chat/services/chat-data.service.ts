@@ -8,6 +8,8 @@ import { environment } from '../../../../environments/environment';
 import { IChatCardParameters } from '../../../shared/custom-ui/chat-card/chat-card.interfaces';
 import { IChatListState } from '../../../reducers/chat-list/chat-list.interfaces';
 import { SetChatListStateAction } from '../../../reducers/chat-list/chat-list.actions';
+import { IChatRoomData } from '../children/chat-room/chat-room.interfaces';
+import { SetChatDataAction } from '../../../reducers/chat-room/chat-room.actions';
 
 @Injectable({
   providedIn: 'root',
@@ -27,5 +29,17 @@ export class ChatDataService {
           new SetChatListStateAction({ chatListState: newData })
         );
       });
+  }
+
+  getChatRoomData(id: string | null): void {
+    if (id) {
+      this.http
+        .get<IChatRoomData>(environment.apiUrl + CApi.chatRoom.get + '/' + id)
+        .subscribe((chatData) => {
+          this.store.dispatch(new SetChatDataAction({ chatData }));
+        });
+    } else {
+      this.store.dispatch(new SetChatDataAction({ chatData: null }));
+    }
   }
 }

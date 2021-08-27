@@ -11,7 +11,7 @@ export enum chatRoomActionsType {
 export class SetChatIdAction implements Action {
   readonly type = chatRoomActionsType.setChatId;
 
-  constructor(public payload: { id: number }) {}
+  constructor(public payload: { id: string | null }) {}
 }
 
 export class SetChatDataAction implements Action {
