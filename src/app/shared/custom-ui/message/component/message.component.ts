@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { EMessageTypes } from '../message.enums';
+import { EMessageStatus, EMessageTypes } from '../message.enums';
 import { IMessageParameters } from '../message.interfaces';
 import { CMessageConfigList } from '../message.config';
 
@@ -17,6 +17,8 @@ export class MessageComponent {
     text: '',
     type: '',
     date: 0,
+    status: '',
+    photo: '',
   };
 
   @Input() set messageParameters(params: IMessageParameters) {

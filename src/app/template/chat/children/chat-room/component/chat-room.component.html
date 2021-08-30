@@ -1,18 +1,24 @@
-<ng-container *ngrxLet="chatRoomData$ as chatRoomData">
+<ng-container *ngrxLet="chatRoomData$; let chatRoomData">
   <ng-container *ngIf="chatRoomData.chatData">
     <div class="chat-header">
       <div class="chat-header-item">
         <div class="chat-photo card-photo">
-          <a [href]="['/']"
-            ><img [src]="chatRoomData.chatData.photo" alt="chat-photo"
-          /></a>
+          <a [href]="['/']">
+            <img
+              [src]="(chatListData$ | ngrxPush)[chatRoomId$ | ngrxPush].photo"
+              alt="chat-photo"
+            />
+          </a>
         </div>
         <div class="chat-info">
           <div class="chat-name user-name-text">
-            {{ chatRoomData.chatData.name }}
+            {{ (chatListData$ | ngrxPush)[chatRoomId$ | ngrxPush].name }}
           </div>
           <div class="chat-online user-action-text">
-            {{ chatRoomData.chatData.online | date: "h:mm:ss" }}
+            {{
+              (chatListData$ | ngrxPush)[chatRoomId$ | ngrxPush].time
+                | date: "h:mm:ss"
+            }}
           </div>
         </div>
       </div>
@@ -27,10 +33,7 @@
     </div>
 
     <div class="chat-body">
-      <div
-        class="chat-body-item"
-        *ngFor="let message of chatRoomData.chatData.messageList"
-      >
+      <div class="chat-body-item" *ngFor="let message of chatRoomData.chatData">
         <div *ngIf="message.type === EMessageTypes.Member" class="member-photo">
           <img [src]="message.photo" alt="member-photo" />
         </div>

@@ -9,10 +9,7 @@
     <div class="chat-card-header">
       <div class="header-item">
         <div class="user-photo card-photo">
-          <img
-            [src]="'/assets/img/' + componentParameters.photo + '.png'"
-            alt="user-photo"
-          />
+          <img [src]="componentParameters.photo" alt="user-photo" />
 
           <div *ngIf="chatCardParameters.online" class="user-status"></div>
         </div>

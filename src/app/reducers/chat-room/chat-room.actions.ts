@@ -19,7 +19,7 @@ export class SetChatDataAction implements Action {
 
   constructor(
     public payload: {
-      chatData: IChatRoomData | null;
+      chatData: IMessageParameters[] | null;
     }
   ) {}
 }

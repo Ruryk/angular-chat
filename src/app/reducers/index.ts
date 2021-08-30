@@ -12,13 +12,13 @@ import {
   chatRoomDataReducer,
   chatRoomNode,
 } from './chat-room/chat-room.reducers';
-
-import * as chatRoomDataSelectors from './chat-room/chat-room.selectors';
-import * as chatListDataSelectors from './chat-list/chat-list.selectors';
 import {
   chatListDataReducer,
   chatListNode,
 } from './chat-list/chat-list.reducers';
+
+import * as chatRoomDataSelectors from './chat-room/chat-room.selectors';
+import * as chatListDataSelectors from './chat-list/chat-list.selectors';
 import { IChatListState } from './chat-list/chat-list.interfaces';
 
 export interface IState {
@@ -42,10 +42,20 @@ export const getChatRoomData = createSelector(
   chatRoomDataSelectors.selectChatRoomData
 );
 
+export const getChatRoomId = createSelector(
+  getChatRoomDataState,
+  chatRoomDataSelectors.selectChatRoomId
+);
+
 // ChatList Selectors
 export const getChatListData = createSelector(
   getChatListDataState,
   chatListDataSelectors.selectChatListData
+);
+
+export const getChatListById = createSelector(
+  getChatListDataState,
+  chatListDataSelectors.selectChatListById
 );
 
 export const metaReducers: MetaReducer<IState>[] = !environment.production

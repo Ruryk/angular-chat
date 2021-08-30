@@ -13,6 +13,7 @@ import { IChatListState } from '../../../reducers/chat-list/chat-list.interfaces
 import { SetChatListStateAction } from '../../../reducers/chat-list/chat-list.actions';
 import { IChatRoomData } from '../children/chat-room/chat-room.interfaces';
 import { SetChatDataAction } from '../../../reducers/chat-room/chat-room.actions';
+import { IMessageParameters } from '../../../shared/custom-ui/message/message.interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -49,7 +50,7 @@ export class ChatDataService {
   getChatRoomData(id: string | null): void {
     if (id) {
       this.http
-        .get<IChatRoomData>(
+        .get<IMessageParameters[]>(
           `${environment.apiUrl}${CApi.chatRoom.get}/${id}/${0}/${20}`
         )
         .subscribe((chatData) => {

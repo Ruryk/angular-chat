@@ -5,5 +5,8 @@ import { IChatRoomData } from '../../template/chat/children/chat-room/chat-room.
 export const selectChatRoomData = (
   state: IChatRoomState
 ): {
-  chatData: IChatRoomData | null;
+  chatData: IMessageParameters[] | null;
 } => state;
+
+export const selectChatRoomId = (state: IChatRoomState): string | null =>
+  state.chatId;

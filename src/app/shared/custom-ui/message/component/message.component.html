@@ -42,7 +42,7 @@
         ></app-button>
       </div>
       <div
-        *ngIf="messageParameters.text"
+        *ngIf="messageParameters.text !== ''"
         class="message-content message-text-user"
       >
         {{ messageParameters.text }}

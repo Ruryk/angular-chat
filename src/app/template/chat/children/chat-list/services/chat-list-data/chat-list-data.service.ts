@@ -7,12 +7,15 @@ import { getChatListData, IState } from '../../../../../../reducers';
 import { IChatCardParameters } from 'src/app/shared/custom-ui/chat-card/chat-card.interfaces';
 import { SetChatIdAction } from '../../../../../../reducers/chat-room/chat-room.actions';
 import { ChatDataService } from '../../../../services/chat-data.service';
+import { IChatListState } from '../../../../../../reducers/chat-list/chat-list.interfaces';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ChatListDataService {
   public unsubscribe$: Subject<void> = new Subject<void>();
+  public chatListDataObject$: Observable<IChatListState> =
+    this.store.select(getChatListData);
   public chatListData$: Observable<IChatCardParameters[]> = this.store
     .select(getChatListData)
     .pipe(map((data) => Object.values(data)));
