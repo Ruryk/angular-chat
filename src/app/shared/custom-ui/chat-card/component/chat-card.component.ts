@@ -11,16 +11,14 @@ import { IChatCardParameters } from '../chat-card.interfaces';
 export class ChatCardComponent {
   public componentParameters: IChatCardParameters = {
     id: '',
-    data: {
-      firstName: 'string',
-      lastName: 'string',
-      photo: 'string',
-      message: 'string',
-      noChecked: 0,
-      time: 0,
-      online: false,
-      status: 'string',
-    },
+    name: '',
+    photo: '',
+    message: '',
+    noChecked: 0,
+    time: 0,
+    online: false,
+    status: 'string',
+    isRoom: false,
   };
 
   @Input() activeChatId: string | null = null;

@@ -10,16 +10,15 @@
       <div class="header-item">
         <div class="user-photo card-photo">
           <img
-            [src]="'/assets/img/' + componentParameters.data.photo + '.png'"
+            [src]="'/assets/img/' + componentParameters.photo + '.png'"
             alt="user-photo"
           />
 
-          <div *ngIf="chatCardParameters.data.online" class="user-status"></div>
+          <div *ngIf="chatCardParameters.online" class="user-status"></div>
         </div>
         <div class="user-info">
           <div class="user-name user-name-text">
-            {{ chatCardParameters.data.firstName }}
-            {{ chatCardParameters.data.lastName }}
+            {{ chatCardParameters.name }}
           </div>
           <div
             class="user-status"
@@ -28,7 +27,7 @@
               'user-action-text': chatCardParameters.id !== activeChatId
             }"
           >
-            {{ chatCardParameters.data.status }}
+            {{ chatCardParameters.status }}
           </div>
         </div>
       </div>
@@ -40,7 +39,7 @@
             'date-text': chatCardParameters.id !== activeChatId
           }"
         >
-          {{ chatCardParameters.data.time | date: "h:mm:ss" }}
+          {{ chatCardParameters.time | date: "h:mm:ss" }}
         </div>
       </div>
     </div>
@@ -52,10 +51,10 @@
           'message-text-user': chatCardParameters.id !== activeChatId
         }"
       >
-        {{ chatCardParameters.data.message }}
+        {{ chatCardParameters.message }}
       </div>
-      <div class="body-state" *ngIf="chatCardParameters.data.noChecked > 0">
-        <span>{{ chatCardParameters.data.noChecked }}</span>
+      <div class="body-state" *ngIf="chatCardParameters.noChecked > 0">
+        <span>{{ chatCardParameters.noChecked }}</span>
       </div>
     </div>
   </div>
