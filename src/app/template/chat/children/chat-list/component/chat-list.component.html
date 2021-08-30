@@ -24,11 +24,19 @@
   </form>
 </div>
 
-<div class="chat-list-body">
-  <app-chat-card
-    *ngFor="let chat of chatListData$ | ngrxPush"
-    [chatCardParameters]="chat"
-    [activeChatId]="activeChatId$ | ngrxPush"
-    (click)="setActiveChat(chat.id)"
-  ></app-chat-card>
+<div class="chat-list-body" *ngrxLet="chatListData$; let chatList">
+  <ng-container *ngIf="chatList.length">
+    <app-chat-card
+      *ngFor="let chat of chatListData$ | ngrxPush"
+      [chatCardParameters]="chat"
+      [activeChatId]="activeChatId$ | ngrxPush"
+      (click)="setActiveChat(chat.id)"
+    ></app-chat-card>
+  </ng-container>
+
+  <ng-container *ngIf="!chatList.length">
+    <div class="chat-list-empty head-subtitle-text">
+      <span>Create new chat</span>
+    </div>
+  </ng-container>
 </div>

@@ -171,6 +171,10 @@
 }
 
 ::ng-deep {
+  .mat-menu-panel.more-message {
+    width: auto !important;
+  }
+
   .emoji-mart-category-label {
     font-family: $fontFamilyMain;
     margin: 10px 0;

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { CChatListConfigList } from '../chat-list.config';
 import { ChatListDataService } from '../services/chat-list-data/chat-list-data.service';
 import { IChatCardParameters } from '../../../../../shared/custom-ui/chat-card/chat-card.interfaces';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { AddChatModalComponent } from '../children/add-chat-modal/component/add-chat-modal.component';
 
 @Component({
@@ -31,7 +31,6 @@ export class ChatListComponent {
 
   openAddChatModal(): void {
     const addChatModalRef = this.dialog.open(AddChatModalComponent);
-
     addChatModalRef.afterClosed().subscribe((result) => {});
   }
 

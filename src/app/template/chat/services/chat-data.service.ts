@@ -32,7 +32,9 @@ export class ChatDataService {
 
   getChatListData(): void {
     this.http
-      .get<IChatCardParameters[]>(environment.apiUrl + CApi.chatList.get)
+      .get<IChatCardParameters[]>(
+        `${environment.apiUrl}${CApi.chatList.get}/${0}/${10}`
+      )
       .subscribe((data: IChatCardParameters[]) => {
         const newData = data.reduce<IChatListState>(
           (dataObj, item) => ((dataObj[item.id] = item), dataObj),
@@ -47,7 +49,9 @@ export class ChatDataService {
   getChatRoomData(id: string | null): void {
     if (id) {
       this.http
-        .get<IChatRoomData>(environment.apiUrl + CApi.chatRoom.get + '/' + id)
+        .get<IChatRoomData>(
+          `${environment.apiUrl}${CApi.chatRoom.get}/${id}/${0}/${20}`
+        )
         .subscribe((chatData) => {
           this.store.dispatch(new SetChatDataAction({ chatData }));
         });

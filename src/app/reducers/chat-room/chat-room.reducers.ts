@@ -21,7 +21,7 @@ const chatRoomState: IChatRoomState = {
         id: 0,
         type: EMessageTypes.Member,
         photo: '/assets/img/nika.png',
-        text: 'Hello! Finally found the time to write to you) I need your help in creating interactive animations for my mobile application.\n',
+        text: 'Hello! Finally found the time to write to you) I need your help in creating interactive animations for my mobile application.',
         date: 1629876134000,
       },
       {

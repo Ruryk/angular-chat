@@ -32,6 +32,11 @@
     resize: none;
   }
 
+  textarea {
+    padding: 10px 20px;
+    box-sizing: border-box;
+  }
+
   input::placeholder {
     color: $lynch;
   }

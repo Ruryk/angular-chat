@@ -35,9 +35,15 @@
     >
       <mat-icon svgIcon="more"></mat-icon>
     </button>
-    <mat-menu #moreMessage="matMenu">
-      <button type="button" mat-menu-item>Edit message</button>
-      <button type="button" mat-menu-item>Delete message</button>
+    <mat-menu #moreMessage="matMenu" [class]="EButtonTypes.MoreMessage">
+      <button type="button" mat-menu-item>
+        <mat-icon svgIcon="edit"></mat-icon>
+        <span>Edit</span>
+      </button>
+      <button type="button" mat-menu-item>
+        <mat-icon svgIcon="delete"></mat-icon>
+        <span>Delete</span>
+      </button>
     </mat-menu>
   </ng-container>
 
