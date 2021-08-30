@@ -13,6 +13,12 @@
     </button>
   </ng-container>
 
+  <ng-container *ngSwitchCase="EButtonTypes.Medium">
+    <button class="btn" type="submit" [ngClass]="EButtonTypes.Medium">
+      <span>{{ buttonParameters.text }}</span>
+    </button>
+  </ng-container>
+
   <ng-container *ngSwitchCase="EButtonTypes.MediumFail">
     <button class="btn" type="button" [ngClass]="EButtonTypes.MediumFail">
       <span>{{ buttonParameters.text }}</span>

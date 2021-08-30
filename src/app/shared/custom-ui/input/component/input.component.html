@@ -23,6 +23,75 @@
     </div>
   </ng-container>
 
+  <ng-container *ngSwitchCase="EInputTypes.Email">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        email: EInputTypes.Email,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="email"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.Password">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        password: EInputTypes.Password,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="password"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.Text">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        text: EInputTypes.Text,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="text"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
   <ng-container *ngSwitchCase="EInputTypes.Message">
     <div class="input-wrapper">
       <div class="input-item">

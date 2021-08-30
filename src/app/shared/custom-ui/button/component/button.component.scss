@@ -2,7 +2,6 @@
 
 .btn {
   font-family: $fontFamilyMain;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +11,8 @@
 }
 
 .big,
-.medium-success {
+.medium-success,
+.medium {
   transition: 0.5s all ease;
   border-radius: 6px;
   justify-content: space-between;
@@ -31,6 +31,14 @@
   span {
     font-size: $bigFz;
     line-height: $bigLh;
+  }
+}
+
+.medium {
+  padding: 13px 50px;
+  span {
+    font-size: $mediumFz;
+    line-height: $mediumFz;
   }
 }
 

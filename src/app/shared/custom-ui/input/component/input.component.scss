@@ -67,6 +67,29 @@
   }
 }
 
+.input-wrapper.email,
+.input-wrapper.text,
+.input-wrapper.password {
+  border: 2px solid transparent;
+  padding: 16px 40px;
+  border-radius: 6px;
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 2px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 2px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  input {
+    border-radius: 6px;
+    background: transparent;
+    outline: none;
+    color: $dark;
+    text-align: left;
+    font-size: $mediumFz;
+    line-height: $mediumLh;
+    caret-color: $blue;
+    font-family: $fontFamilyMain;
+  }
+}
+
 .input-wrapper.search {
   padding: 23px 41px;
   border-radius: 6px 0 0 6px;
