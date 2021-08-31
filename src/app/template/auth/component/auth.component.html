@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<div class="auth">
+  <div class="auth-head head-title-text">
+    <a class="auth-link" [routerLink]="['sign-in']" routerLinkActive="active"
+      >sign in</a
+    >
+    /
+    <a class="auth-link" [routerLink]="['sign-up']" routerLinkActive="active"
+      >sign up</a
+    >
+  </div>
+  <router-outlet></router-outlet>
+</div>
