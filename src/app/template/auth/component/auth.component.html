@@ -13,6 +13,9 @@
   </ng-container>
 
   <ng-container *ngIf="(authStage$ | ngrxPush) === EAuthStage.Authentication">
+    <div class="auth-head head-title-text">
+      <span>Authentication</span>
+    </div>
     <app-authentication></app-authentication>
   </ng-container>
 </div>

@@ -1,0 +1,45 @@
+@import "src/assets/scss/mixins";
+
+.authentication {
+  display: flex;
+
+  .authentication-item {
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-right: 20px;
+    width: 34px;
+    height: 50px;
+    -webkit-box-shadow: 10px 10px 10px -1px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 10px 10px 10px -1px rgba(34, 60, 80, 0.1);
+    box-shadow: 10px 10px 10px -1px rgba(34, 60, 80, 0.1);
+    input {
+      text-align: center;
+      border: 2px solid transparent;
+      font-family: $fontFamilyMain;
+      font-size: $mediumFz;
+      line-height: $mediumLh;
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      outline: none;
+    }
+
+    input.active {
+      border: 2px solid $blue;
+    }
+  }
+
+  .authentication-item:last-child {
+    margin-right: 0;
+  }
+}
+
+input.hidden {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+}

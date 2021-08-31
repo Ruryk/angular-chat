@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: $whiteLilac;
 }
 
 .auth {
@@ -15,8 +16,13 @@
   align-items: center;
   justify-content: center;
   &-head {
+    text-align: center;
     color: $lynch;
     margin-bottom: 50px;
+
+    span {
+      color: $dark;
+    }
   }
 
   &-link {

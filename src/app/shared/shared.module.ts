@@ -12,7 +12,8 @@ import { InputComponent } from './custom-ui/input/component/input.component';
 import { SelectComponent } from './custom-ui/select/component/select.component';
 import { ChatCardComponent } from './custom-ui/chat-card/component/chat-card.component';
 import { MessageComponent } from './custom-ui/message/component/message.component';
-import { AuthenticationInputComponent } from './custom-ui/authentication-input/authentication-input.component';
+import { AuthenticationInputComponent } from './custom-ui/authentication-input/component/authentication-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AuthenticationInputComponent } from './custom-ui/authentication-input/a
     PickerModule,
     ReactiveComponentModule,
     MatInputModule,
+    ReactiveFormsModule,
   ],
   exports: [
     ButtonComponent,
@@ -39,6 +41,7 @@ import { AuthenticationInputComponent } from './custom-ui/authentication-input/a
     ChatCardComponent,
     MatIconModule,
     MessageComponent,
+    AuthenticationInputComponent,
   ],
 })
 export class SharedModule {}
