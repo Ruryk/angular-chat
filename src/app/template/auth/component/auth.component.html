@@ -1,11 +1,19 @@
 <div class="auth">
   <ng-container *ngIf="(authStage$ | ngrxPush) === EAuthStage.InputData">
     <div class="auth-head head-title-text">
-      <a class="auth-link" [routerLink]="['sign-in']" routerLinkActive="active"
+      <a
+        class="auth-link"
+        [routerLink]="['sign-in']"
+        routerLinkActive="active"
+        (click)="setAuthView(EAuthView.SignIn)"
         >sign in</a
       >
       /
-      <a class="auth-link" [routerLink]="['sign-up']" routerLinkActive="active"
+      <a
+        class="auth-link"
+        [routerLink]="['sign-up']"
+        routerLinkActive="active"
+        (click)="setAuthView(EAuthView.SignUp)"
         >sign up</a
       >
     </div>

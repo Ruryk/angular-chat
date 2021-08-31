@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { BehaviorSubject } from 'rxjs';
-import { EAuthStage } from '../auth.enums';
+import { EAuthStage, EAuthView } from '../auth.enums';
 
 @Component({
   selector: 'app-auth',
@@ -10,6 +10,11 @@ import { EAuthStage } from '../auth.enums';
 })
 export class AuthComponent {
   public EAuthStage = EAuthStage;
+  public EAuthView = EAuthView;
   public authStage$: BehaviorSubject<string> = this.authService.authStatus$;
   constructor(private authService: AuthService) {}
+
+  setAuthView(view: string): void {
+    this.authService.authView$.next(view);
+  }
 }

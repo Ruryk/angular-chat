@@ -23,5 +23,16 @@ export class SignInService {
       });
   }
 
-  authenticationUser(code: string): void {}
+  authenticationUser(code: string): void {
+    this.http
+      .post<{ token: string }>(CApi.server + CApi.user.authenticationLogin, {
+        code,
+      })
+      .subscribe((res) => {
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+          this.authService.authStatus$.next(EAuthStage.InputData);
+        }
+      });
+  }
 }

@@ -28,5 +28,16 @@ export class SignUpService {
       });
   }
 
-  authenticationUser(code: string): void {}
+  authenticationUser(code: string): void {
+    this.http
+      .post<{ token: string }>(CApi.server + CApi.user.authenticationRegister, {
+        code,
+      })
+      .subscribe((res) => {
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+          this.authService.authStatus$.next(EAuthStage.InputData);
+        }
+      });
+  }
 }
