@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { CSignUpConfigList } from '../sign-up.config';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { SignUpService } from '../services/sign-up.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,4 +11,19 @@ import { CSignUpConfigList } from '../sign-up.config';
 })
 export class SignUpComponent {
   public readonly signUpConfig = CSignUpConfigList;
+  public readonly signUpForm: FormGroup = new FormGroup({
+    firstName: new FormControl('Elon', Validators.minLength(2)),
+    lastName: new FormControl('Musk', Validators.minLength(2)),
+    email: new FormControl('elon.musk@gmail.com', Validators.email),
+    password: new FormControl('222333', Validators.minLength(6)),
+  });
+
+  constructor(private signUpService: SignUpService) {}
+
+  submitForm(): void {
+    const formStatus = this.signUpForm.valid;
+    if (formStatus) {
+      this.signUpService.signUpUser(this.signUpForm.value);
+    }
+  }
 }

@@ -1,16 +1,28 @@
-<form>
+<form [formGroup]="signUpForm" (ngSubmit)="submitForm()">
   <div class="sign-in">
     <div class="sign-in-item">
-      <app-input [inputParameters]="signUpConfig.inputs.firstName"></app-input>
+      <app-input
+        formControlName="firstName"
+        [inputParameters]="signUpConfig.inputs.firstName"
+      ></app-input>
     </div>
     <div class="sign-in-item">
-      <app-input [inputParameters]="signUpConfig.inputs.lastName"></app-input>
+      <app-input
+        formControlName="lastName"
+        [inputParameters]="signUpConfig.inputs.lastName"
+      ></app-input>
     </div>
     <div class="sign-in-item">
-      <app-input [inputParameters]="signUpConfig.inputs.email"></app-input>
+      <app-input
+        formControlName="email"
+        [inputParameters]="signUpConfig.inputs.email"
+      ></app-input>
     </div>
     <div class="sign-in-item">
-      <app-input [inputParameters]="signUpConfig.inputs.password"></app-input>
+      <app-input
+        formControlName="password"
+        [inputParameters]="signUpConfig.inputs.password"
+      ></app-input>
     </div>
     <div class="sign-in-item">
       <app-button [buttonParameters]="signUpConfig.buttons.signUp"></app-button>

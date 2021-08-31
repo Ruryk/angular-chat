@@ -12,6 +12,7 @@ import { InputComponent } from './custom-ui/input/component/input.component';
 import { SelectComponent } from './custom-ui/select/component/select.component';
 import { ChatCardComponent } from './custom-ui/chat-card/component/chat-card.component';
 import { MessageComponent } from './custom-ui/message/component/message.component';
+import { AuthenticationInputComponent } from './custom-ui/authentication-input/authentication-input.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MessageComponent } from './custom-ui/message/component/message.componen
     SelectComponent,
     ChatCardComponent,
     MessageComponent,
+    AuthenticationInputComponent,
   ],
   imports: [
     CommonModule,

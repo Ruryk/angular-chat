@@ -1,12 +1,18 @@
 <div class="auth">
-  <div class="auth-head head-title-text">
-    <a class="auth-link" [routerLink]="['sign-in']" routerLinkActive="active"
-      >sign in</a
-    >
-    /
-    <a class="auth-link" [routerLink]="['sign-up']" routerLinkActive="active"
-      >sign up</a
-    >
-  </div>
-  <router-outlet></router-outlet>
+  <ng-container *ngIf="(authStage$ | ngrxPush) === EAuthStage.InputData">
+    <div class="auth-head head-title-text">
+      <a class="auth-link" [routerLink]="['sign-in']" routerLinkActive="active"
+        >sign in</a
+      >
+      /
+      <a class="auth-link" [routerLink]="['sign-up']" routerLinkActive="active"
+        >sign up</a
+      >
+    </div>
+    <router-outlet></router-outlet>
+  </ng-container>
+
+  <ng-container *ngIf="(authStage$ | ngrxPush) === EAuthStage.Authentication">
+    <app-authentication></app-authentication>
+  </ng-container>
 </div>

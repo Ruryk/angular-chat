@@ -7,6 +7,8 @@ import { SignUpComponent } from './children/sign-up/component/sign-up.component'
 import { AuthenticationComponent } from './children/authentication/authentication.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,13 @@ import { SharedModule } from '../../shared/shared.module';
     SignUpComponent,
     AuthenticationComponent,
   ],
-  imports: [CommonModule, AuthRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    AuthRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
+    ReactiveComponentModule,
+  ],
   exports: [AuthenticationComponent],
 })
 export class AuthModule {}

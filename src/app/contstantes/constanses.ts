@@ -1,4 +1,5 @@
 export const CApi = {
+  server: 'http://localhost:3000/',
   chatList: {
     get: 'chat-list',
     addChat: 'chat',
@@ -9,5 +10,11 @@ export const CApi = {
   },
   main: {
     get: 'main',
+  },
+  user: {
+    login: 'login',
+    register: 'register',
+    authenticationLogin: 'login/secret',
+    authenticationRegister: 'register/secret',
   },
 };
