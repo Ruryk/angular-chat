@@ -1,0 +1,104 @@
+@import "mixins";
+
+.head-title-text {
+  font-size: $headFz;
+  line-height: $headLh;
+  color: $dark;
+  font-weight: $boldFw;
+  text-transform: capitalize;
+}
+
+.head-subtitle-text {
+  font-size: $mediumFz;
+  line-height: $mediumLh;
+  color: $lynch;
+  text-transform: capitalize;
+}
+
+.nav-item-text {
+  font-size: $mediumFz;
+  line-height: $mediumLh;
+  font-weight: $boldFw;
+  color: $lynch;
+  text-transform: uppercase;
+}
+
+.user-name-text {
+  font-size: $mediumFz;
+  font-weight: $boldFw;
+  line-height: $mediumFz;
+  color: $dark;
+  text-transform: capitalize;
+}
+.user-action-text,
+.user-action-text-active {
+  font-size: $standardFz;
+  line-height: $standardLh;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+.user-action-text {
+  color: $blue;
+}
+
+.user-action-text-active {
+  color: $white;
+}
+
+.card-photo {
+  max-width: 54px;
+  max-height: 54px;
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+    max-width: 54px;
+    max-height: 54px;
+    object-fit: cover;
+    min-height: 54px;
+  }
+}
+
+.message-text-member,
+.message-text-user {
+  font-family: $fontFamilyMain;
+  font-weight: 500;
+  font-size: $standardFz;
+  //line-height: $bigLh;
+  line-height: 26px;
+}
+
+.message-text-member {
+  color: $white;
+}
+
+.message-text-user {
+  color: $lynch;
+}
+
+.date-text,
+.date-text-active {
+  font-size: $standardFz;
+  line-height: $standardLh;
+}
+
+.date-text {
+  color: $lynch;
+}
+
+.date-text-active {
+  color: $white;
+}
+
+.small-text {
+  font-size: $smallFz;
+  line-height: $smallLh;
+}
+
+.user-card-container {
+  padding: 30px 40px;
+  min-height: 220px;
+  max-width: 580px;
+  width: 100%;
+  border-radius: 6px;
+}

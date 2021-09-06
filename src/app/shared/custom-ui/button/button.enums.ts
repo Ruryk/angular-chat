@@ -1,0 +1,16 @@
+export enum EButtonTypes {
+  Big = 'big',
+  Medium = 'medium',
+  MediumSuccess = 'medium-success',
+  MediumFail = 'medium-fail',
+  Close = 'close',
+  Add = 'add',
+  Image = 'image',
+  Send = 'send',
+  Video = 'video',
+  Smile = 'smile',
+  Attach = 'attach',
+  File = 'file',
+  More = 'more',
+  MoreMessage = 'more-message',
+}

@@ -1,0 +1,9 @@
+<ul class="navigation-list">
+  <li class="navigation-list-item" [routerLinkActive]="'active-link'"
+      *ngFor="let link of navigationConfig">
+    <div class="list-item">
+      <mat-icon [svgIcon]="link.icon"></mat-icon>
+      <a [routerLink]="[link.href]" class="nav-item-text">{{ link.text }}</a>
+    </div>
+  </li>
+</ul>

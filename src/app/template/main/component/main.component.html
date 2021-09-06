@@ -1,1 +1,13 @@
-<app-chat></app-chat>
+<main>
+  <aside class="main-aside">
+    <app-user-card></app-user-card>
+    <app-navigation></app-navigation>
+  </aside>
+
+  <section class="main-content">
+    <!--  will be router-outlet -->
+    <!--    <app-chat></app-chat>-->
+    <router-outlet></router-outlet>
+    <!--  / will be router-outlet -->
+  </section>
+</main>

@@ -1,0 +1,58 @@
+<ng-container>
+  <div
+    class="chat-card-wrapper user-card-container"
+    [ngClass]="{
+      active: chatCardParameters.id === activeChatId,
+      'no-active': chatCardParameters.id !== activeChatId
+    }"
+  >
+    <div class="chat-card-header">
+      <div class="header-item">
+        <div class="user-photo card-photo">
+          <img [src]="componentParameters.photo" alt="user-photo" />
+
+          <div *ngIf="chatCardParameters.online" class="user-status"></div>
+        </div>
+        <div class="user-info">
+          <div class="user-name user-name-text">
+            {{ chatCardParameters.name }}
+          </div>
+          <div
+            class="user-status"
+            [ngClass]="{
+              'user-action-text-active': chatCardParameters.id === activeChatId,
+              'user-action-text': chatCardParameters.id !== activeChatId
+            }"
+          >
+            {{ chatCardParameters.status }}
+          </div>
+        </div>
+      </div>
+      <div class="header-item">
+        <div
+          class="date-message"
+          [ngClass]="{
+            'date-text-active': chatCardParameters.id === activeChatId,
+            'date-text': chatCardParameters.id !== activeChatId
+          }"
+        >
+          {{ chatCardParameters.time | date: "h:mm:ss" }}
+        </div>
+      </div>
+    </div>
+    <div class="chat-card-body">
+      <div
+        class="body-message"
+        [ngClass]="{
+          'message-text-member': chatCardParameters.id === activeChatId,
+          'message-text-user': chatCardParameters.id !== activeChatId
+        }"
+      >
+        {{ chatCardParameters.message }}
+      </div>
+      <div class="body-state" *ngIf="chatCardParameters.noChecked > 0">
+        <span>{{ chatCardParameters.noChecked }}</span>
+      </div>
+    </div>
+  </div>
+</ng-container>

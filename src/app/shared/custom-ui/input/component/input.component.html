@@ -1,0 +1,131 @@
+<ng-container [ngSwitch]="inputParameters.type">
+  <ng-container *ngSwitchCase="EInputTypes.Search">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        search: EInputTypes.Search,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <mat-icon svgIcon="search"></mat-icon>
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="text"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.Email">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        email: EInputTypes.Email,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="email"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.Password">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        password: EInputTypes.Password,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="password"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.Text">
+    <div
+      class="input-wrapper"
+      [ngClass]="{
+        text: EInputTypes.Text,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="text"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.Message">
+    <div class="input-wrapper">
+      <div class="input-item">
+        <textarea
+          [value]="value"
+          [placeholder]="inputParameters.placeholder"
+          (input)="change($event)"
+          rows="3"
+        ></textarea>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="EInputTypes.UserSearch"
+    ><div
+      class="input-wrapper"
+      [ngClass]="{
+        'user-search': EInputTypes.UserSearch,
+        active: focus
+      }"
+      (click)="inputElement.focus()"
+    >
+      <mat-icon svgIcon="person"></mat-icon>
+      <div class="input-item">
+        <input
+          #inputElement
+          (focus)="focus = true"
+          (focusout)="focus = false"
+          type="text"
+          [placeholder]="inputParameters.placeholder"
+          [value]="value"
+          (input)="change($event)"
+        />
+      </div>
+    </div>
+  </ng-container>
+</ng-container>

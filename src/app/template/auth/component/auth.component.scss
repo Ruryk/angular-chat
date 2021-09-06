@@ -1,0 +1,36 @@
+@import "src/assets/scss/mixins";
+
+:host {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $whiteLilac;
+}
+
+.auth {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &-head {
+    text-align: center;
+    color: $lynch;
+    margin-bottom: 50px;
+
+    span {
+      color: $dark;
+    }
+  }
+
+  &-link {
+    color: $lynch;
+  }
+
+  &-link.active {
+    color: $dark;
+    text-decoration: underline;
+  }
+}

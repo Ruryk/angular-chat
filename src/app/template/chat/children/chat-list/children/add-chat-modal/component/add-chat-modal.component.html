@@ -1,0 +1,26 @@
+<form [formGroup]="addChatForm" (ngSubmit)="submitForm($event)">
+  <div class="modal-close">
+    <app-button
+      [mat-dialog-close]="false"
+      [buttonParameters]="addChatModalConfig.buttons.close"
+    ></app-button>
+  </div>
+  <div class="modal-header user-name-text">Find User</div>
+  <div class="modal-body">
+    <app-input
+      formControlName="userSearch"
+      [inputParameters]="addChatModalConfig.inputs.search"
+    ></app-input>
+  </div>
+  <div class="modal-users"></div>
+  <div class="modal-action">
+    <app-button
+      [mat-dialog-close]="false"
+      [buttonParameters]="addChatModalConfig.buttons.cancel"
+    ></app-button>
+    <app-button
+      [mat-dialog-close]="true"
+      [buttonParameters]="addChatModalConfig.buttons.create"
+    ></app-button>
+  </div>
+</form>

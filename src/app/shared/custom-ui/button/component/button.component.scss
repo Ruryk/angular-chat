@@ -1,0 +1,219 @@
+@import "src/assets/scss/mixins";
+
+.btn {
+  font-family: $fontFamilyMain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.big,
+.medium-success,
+.medium {
+  transition: 0.5s all ease;
+  border-radius: 6px;
+  justify-content: space-between;
+  color: $white;
+  background: linear-gradient(92.68deg, #7cb8f7 0%, #2a8bf2 100%);
+
+  mat-icon {
+    margin-right: 10px;
+  }
+}
+
+.big {
+  max-width: 240px;
+  padding: 18px 25px;
+
+  span {
+    font-size: $bigFz;
+    line-height: $bigLh;
+  }
+}
+
+.medium {
+  padding: 13px 50px;
+  span {
+    font-size: $mediumFz;
+    line-height: $mediumFz;
+  }
+}
+
+.medium-success,
+.medium-fail {
+  padding: 10px 15px;
+  span {
+    font-size: $mediumFz;
+    line-height: $mediumFz;
+  }
+}
+.medium-fail {
+  color: $dark;
+}
+
+.close {
+  mat-icon {
+    transform: rotate(45deg);
+  }
+}
+
+.big:hover,
+.medium-success {
+  transition: 0.5s all ease;
+  box-shadow: 6px 6px 25px rgba(42, 139, 242, 0.15),
+    4px 4px 25px rgba(42, 139, 242, 0.05),
+    10px 6px 25px rgba(42, 139, 242, 0.15);
+}
+
+.more-message,
+.more,
+.attach {
+  mat-icon {
+    color: $lynch;
+  }
+}
+
+.more-message {
+  mat-icon {
+    transform: rotate(90deg);
+  }
+}
+
+.more,
+.attach {
+  width: 52px;
+  height: 52px;
+  background: $white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.03),
+    0px 7px 25px rgba(42, 139, 242, 0.03), 0px 5px 25px rgba(42, 139, 242, 0.07);
+}
+
+.add,
+.image,
+.video,
+.file,
+.send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(325.78deg, #2a8bf2 14.76%, #7cb8f7 87.3%);
+  /* Shadow Active Icon */
+  border-radius: 50%;
+  transition: 0.5s all ease;
+
+  mat-icon {
+    color: $white;
+  }
+
+  &:hover {
+    transition: 0.5s all ease;
+    box-shadow: 4px 4px 25px rgba(42, 139, 242, 0.15),
+      2px 2px 25px rgba(42, 139, 242, 0.05),
+      4px 6px 10px rgba(42, 139, 242, 0.15);
+  }
+}
+
+.add-file-message {
+  position: relative;
+  input[type="file"] {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+
+  &-panel {
+    transition: 10.5s all ease;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    button {
+      bottom: 50px;
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  &-panel.active {
+    transition: 1s all ease;
+    opacity: 1;
+    button {
+      opacity: 1;
+    }
+    button:nth-child(1) {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    button:nth-child(2) {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    button:nth-child(3) {
+      position: relative;
+    }
+  }
+}
+
+.emoji {
+  position: relative;
+
+  .emoji-list {
+    bottom: 50px;
+    right: -100px;
+    position: absolute;
+    display: none;
+  }
+
+  .emoji-list.active {
+    display: inline-flex;
+  }
+}
+
+::ng-deep {
+  .mat-menu-panel.more-message {
+    width: auto !important;
+  }
+
+  .emoji-mart-category-label {
+    font-family: $fontFamilyMain;
+    margin: 10px 0;
+  }
+  .emoji-mart-search {
+    display: none;
+  }
+
+  .emoji-mart-scroll {
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $lynch;
+      box-shadow: 4px 4px 15px rgba(112, 124, 151, 0.05),
+        2px 2px 10px rgba(112, 124, 151, 0.1),
+        1px 1px 50px rgba(112, 124, 151, 0.15);
+      border-radius: 10px;
+      box-sizing: content-box;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $lynch;
+    }
+  }
+}
