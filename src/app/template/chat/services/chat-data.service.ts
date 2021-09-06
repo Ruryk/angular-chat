@@ -37,6 +37,7 @@ export class ChatDataService {
         `${environment.apiUrl}${CApi.chatList.get}/${0}/${10}`
       )
       .subscribe((data: IChatCardParameters[]) => {
+        console.log(data);
         const newData = data.reduce<IChatListState>(
           (dataObj, item) => ((dataObj[item.id] = item), dataObj),
           {}

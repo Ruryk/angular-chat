@@ -16,6 +16,7 @@ export class SignInService {
     this.http
       .post<{ token: string }>(CApi.server + CApi.user.login, signInData)
       .subscribe((res) => {
+        console.log(res);
         if (res.token) {
           localStorage.setItem('token', res.token);
           this.authService.authStatus$.next(EAuthStage.Authentication);

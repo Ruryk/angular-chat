@@ -18,11 +18,14 @@ export class AuthenticationComponent implements OnInit {
     public signInService: SignInService,
     public signUpService: SignUpService,
     public authService: AuthService
-  ) {}
+  ) {
+    console.log(this.authService.authView)
+  }
 
   ngOnInit(): void {
     this.authenticationForm.statusChanges.pipe().subscribe((status: string) => {
       if (status === EAuthStatus.Valid) {
+
         switch (this.authService.authView) {
           case EAuthView.SignIn:
             this.signInService.authenticationUser(
@@ -31,7 +34,7 @@ export class AuthenticationComponent implements OnInit {
             break;
           case EAuthView.SignUp:
             this.signUpService.authenticationUser(
-              this.authenticationForm.value
+              this.authenticationForm.value.code
             );
             break;
           default:

@@ -12,9 +12,9 @@ import { SignUpService } from '../services/sign-up.service';
 export class SignUpComponent {
   public readonly signUpConfig = CSignUpConfigList;
   public readonly signUpForm: FormGroup = new FormGroup({
-    firstName: new FormControl('Elon', Validators.minLength(2)),
-    lastName: new FormControl('Musk', Validators.minLength(2)),
-    email: new FormControl('elon.musk@gmail.com', Validators.email),
+    firstName: new FormControl('Elon', [Validators.minLength(2), Validators.required]),
+    lastName: new FormControl('Musk', [Validators.minLength(2), Validators.required]),
+    email: new FormControl('elon.musk@gmail.com', [Validators.email, Validators.required]),
     password: new FormControl('222333', Validators.minLength(6)),
   });
 
