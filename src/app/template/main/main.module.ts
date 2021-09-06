@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { MainComponent } from './component/main.component';
 import { MainRoutingModule } from './main-routing.module';
-import { ChatModule } from '../chat/chat.module';
-import { UserCardModule } from '../../shared/user-card/user-card.module';
-import { NavigationModule } from '../../shared/navigation/navigation.module';
+import { ChatModule } from '../../shared/chat/chat.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +12,7 @@ import { NavigationModule } from '../../shared/navigation/navigation.module';
   imports: [
     CommonModule,
     MainRoutingModule,
-    ChatModule,
-    UserCardModule,
-    NavigationModule
+    ChatModule
   ],
   exports: [
     MainComponent
