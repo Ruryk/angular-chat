@@ -35,7 +35,7 @@ export class SignUpService {
     const registerData = Object.assign({secretKey: secretKey}, this.signUpData$.value)
     console.log(registerData);
     this.http
-      .post<{ token: string }>(CApi.server + CApi.user.authenticationRegister, {
+      .post<{ token: string }>(CApi.user.authenticationRegister, {
         registerData
       })
       .subscribe((res) => {
